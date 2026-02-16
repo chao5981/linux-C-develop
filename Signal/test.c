@@ -45,6 +45,7 @@ void signal_handler(int sig,siginfo_t *info,void *ucontext)
 int main(void)
 {
     struct sigaction sig_act;
+    //信号中断函数类似要void *(int)
     sig_act.sa_sigaction=signal_handler;
     sig_act.sa_flags=SA_SIGINFO;
     int signal[]={SIGUSR1,SIGUSR2,SIGALRM,SIGINT,SIGABRT};
